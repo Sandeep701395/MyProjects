@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+   <bean id="mybook1" class="using_beanfactory.Book">
+   <constructor-arg name="name" value="java"></constructor-arg>
+   <constructor-arg name="cost" value="999"></constructor-arg>
+   <constructor-arg name="pages" value="400"></constructor-arg>
+   <constructor-arg name="year" value="1995"></constructor-arg>
+   </bean>
+   <bean id="mybook2" class="using_beanfactory.Book">
+   <constructor-arg name="name" value="sql"></constructor-arg>
+   <constructor-arg name="cost" value="499"></constructor-arg>
+   <constructor-arg name="pages" value="230"></constructor-arg>
+   <constructor-arg name="year" value="2001"></constructor-arg>
+   </bean>
+   
+   <bean id="myauthor" class="using_beanfactory.Author">
+   <constructor-arg name="name" value="james"></constructor-arg>
+   <constructor-arg name="age" value="66"></constructor-arg>
+   <constructor-arg name="address" value="usa"></constructor-arg>
+   <constructor-arg name="gender" value="Male"></constructor-arg>
+   <constructor-arg name="books" >
+   <list>
+   <ref bean="mybook1" />
+   <ref bean="mybook2" />
+   </list>
+   </constructor-arg>
+   </bean>
+
+</beans>

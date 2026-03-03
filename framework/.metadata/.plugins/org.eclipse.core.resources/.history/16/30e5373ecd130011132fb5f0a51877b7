@@ -1,0 +1,44 @@
+package org.jsp.springbootemployeecrud_app.controller;
+
+import java.util.Optional;
+
+import org.jsp.springbootemployeecrud_app.dto.Employee;
+import org.jsp.springbootemployeecrud_app.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	private EmployeeService service;
+	
+	@PostMapping("/employee/save")
+	public void saveEmployee(@RequestBody Employee employee)
+	{
+		service.saveEmployee(employee);
+	}
+	
+	@PutMapping("/employee/update")
+	public Employee updateEmployee(@RequestBody Employee employee)
+	{
+		return service.updateEmployee(employee);
+	}
+	
+//	@GetMapping("employee/find/{eid}")
+//	public Optional<Employee> findEmployeeById(@PathVariable int eid)
+//	{
+//		return service.findEmployeeById(eid);
+//	}
+	
+	@GetMapping("employee/find/{eid}")
+	public Employee findEmployeeById(@PathVariable int eid)
+	{
+		return service.findEmployeeById(eid);
+	}
+}

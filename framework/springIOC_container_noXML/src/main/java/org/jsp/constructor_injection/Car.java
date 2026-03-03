@@ -1,0 +1,23 @@
+package org.jsp.constructor_injection;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class Car {
+
+	private String brand;
+	private String color;
+	private double cost;
+	public Car( String brand, String color, double cost) {
+		super();
+		this.brand = brand;
+		this.color = color;
+		this.cost = cost;
+	}
+//	@Override
+//	public String toString() {
+//		return "Car [brand=" + brand + ", color=" + color + ", cost=" + cost + "]";
+//	}
+	
+	
+	
+}

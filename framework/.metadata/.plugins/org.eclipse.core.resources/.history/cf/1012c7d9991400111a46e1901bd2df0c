@@ -1,0 +1,20 @@
+package org.jsp.springbootUser1CRUD_app.controller;
+
+import org.jsp.springbootUser1CRUD_app.dto.User;
+import org.jsp.springbootUser1CRUD_app.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+	@Autowired
+	private UserService service;
+	
+	@PostMapping("/save")
+	public void saveUser(@RequestBody User user)
+	{
+		service.saveUser(user);
+	}
+}

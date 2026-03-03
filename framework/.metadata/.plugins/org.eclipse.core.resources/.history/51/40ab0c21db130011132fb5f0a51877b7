@@ -1,0 +1,10 @@
+package org.jsp.springbootstudentcrud_app.dao;
+
+import org.jsp.springbootstudentcrud_app.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+@Repository
+public class StudentDao {
+	@Autowired
+	private StudentRepository repository;
+}

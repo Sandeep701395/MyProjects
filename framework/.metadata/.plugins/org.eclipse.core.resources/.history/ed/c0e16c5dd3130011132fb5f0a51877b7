@@ -1,0 +1,86 @@
+package org.jsp.springbootemployeecrud_app.service;
+
+import java.util.Optional;
+
+import org.jsp.springbootemployeecrud_app.dao.EmployeeDao;
+import org.jsp.springbootemployeecrud_app.dto.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EmployeeService {
+	@Autowired
+	private EmployeeDao dao;
+	
+	public void saveEmployee(Employee employee)
+	{
+		dao.saveEmployee(employee);
+	}
+	
+//	public Employee updateEmployee(Employee employee)
+//	{
+//		return dao.updateEmployee(employee);
+//	}
+	
+	public Employee updateEmployee(Employee employee)
+	{
+		Employee dbEmployee=dao.findEmployeeById(employee.getEid());
+		if(dbEmployee != null)
+		{
+		   return dao.updateEmployee(employee);
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+	
+	
+//	
+//	public Optional<Employee> findEmployeeById(int eid)
+//	{
+//		Optional<Employee> dbEmployee=dao.findEmployeeById(eid);
+//		if(dbEmployee !=null)
+//		{
+//			return dbEmployee;
+//		}
+//		else
+//		{
+//			return null;
+//		}
+//		
+//	}
+	
+	public Employee findEmployeeById(int eid)
+	{
+		Employee dbEmployee=dao.findEmployeeById(eid);
+		if(dbEmployee == null)
+		{
+			return null;
+		}
+		else
+		{
+			return dbEmployee;
+		}
+	}
+	
+//	public void deleteEmployee(Employee employee)
+//	{
+//		dao.deleteEmployee(employee);
+//	}
+	
+	public void deleteEmployeeById(int eid)
+	{
+		Employee dbEmployee=dao.findEmployeeById(eid);
+		if(dbEmployee != null)
+		{
+			dao.deleteEmployee(dbEmployee);
+		}
+		else
+		{
+			throw new RuntimeException("Employee Id is Not Exist....");
+		}
+		
+	}
+}

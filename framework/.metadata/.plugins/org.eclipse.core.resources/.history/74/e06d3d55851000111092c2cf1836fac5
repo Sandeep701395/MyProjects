@@ -1,0 +1,25 @@
+package org.jsp.springIOC_container_noXML;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages = "org.jsp")
+public class MyApplicationConfig {
+
+	@Bean
+	public List getArrayList()
+	{
+		return new ArrayList();
+	}
+	
+	@Bean(name = "mybike")
+	public Bike getBike()
+	{
+		return new Bike();
+	}
+}

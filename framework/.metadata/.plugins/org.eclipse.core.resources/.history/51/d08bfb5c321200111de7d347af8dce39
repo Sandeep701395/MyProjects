@@ -1,0 +1,20 @@
+package org.jsp.studentspringboot.controller;
+
+import org.jsp.studentspringboot.dto.Student;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+
+	@GetMapping("/savestudent")
+	public void saveStudent(Student student)
+	{
+		System.out.println(student.getSid());
+		System.out.println(student.getName());
+		System.out.println(student.getAge());
+		System.out.println(student.getAddress());
+		System.out.println(student.getMarks());
+		
+	}
+}

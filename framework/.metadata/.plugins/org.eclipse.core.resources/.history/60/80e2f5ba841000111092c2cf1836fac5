@@ -1,0 +1,5 @@
+package org.jsp.springIOC_container_noXML;
+
+public class Bike {
+
+}

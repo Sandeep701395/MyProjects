@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	height:100vh;
+	width:100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#container{
+
+height: 230px;
+width: 150px;
+border: 2px solid;
+border-radius: 10px;
+background-color: gray;
+}
+
+
+.buttons{
+height: 25px;
+width:100px;
+margin-top: 10px;
+margin-left: 15px;
+border-radius: 8px;
+color: white;
+}
+#btn1{
+background-color: red;
+}
+#btn2{
+background-color: orange;
+}
+#btn3{
+background-color: blue;
+}
+#btn4{
+background-color: black;
+}
+#btn5{
+background-color: lightblue;
+}
+#btn6{
+background-color: purple;
+}
+
+</style>
+</head>
+<body>
+	<div id="container">
+		<form action="opensite" method="post">
+			<button class="buttons" id="btn1" name="action" value="youtube">YouTube</button><br>
+			<button class="buttons" id="btn2" name="action" value="netflix">NetFlix</button><br>
+			<button class="buttons" id="btn3" name="action" value="primevideo">PrimeVideo</button><br>
+			<button class="buttons" id="btn4" name="action" value="zee5">Zee5</button><br>
+			<button class="buttons" id="btn5" name="action" value="hotstar">HotStar</button><br>
+			<button class="buttons" id="btn6" name="action" value="jiotv">JioTv</button>
+		</form>
+
+	</div>
+</body>
+</html>

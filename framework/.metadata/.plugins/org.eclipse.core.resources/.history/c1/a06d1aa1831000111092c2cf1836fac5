@@ -1,0 +1,25 @@
+package org.jsp.springIOC_container_noXML;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class FoodDriver {
+
+	public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext applicationContext=new AnnotationConfigApplicationContext(MyApplicationConfig.class);
+		Food food=applicationContext.getBean(Food.class, "food");
+		System.out.println(food);
+		
+		System.out.println("---------------------------");
+		
+		ArrayList arrayList=(ArrayList) applicationContext.getBean("getArrayList");
+		arrayList.add(10);
+		arrayList.add(35.3);
+		arrayList.add("Ram");
+		arrayList.add('a');
+		System.out.println(arrayList);
+		
+	}
+}

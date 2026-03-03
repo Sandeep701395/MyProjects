@@ -1,0 +1,43 @@
+package com.sandeepinfotech.springbootusercrud_app.dao;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sandeepinfotech.springbootusercrud_app.dto.User;
+import com.sandeepinfotech.springbootusercrud_app.repository.UserRepository;
+@Repository
+public class UserDao {
+
+	@Autowired
+	private UserRepository repository;
+	
+	public void saveUser(User user)
+	{
+		repository.save(user);
+	}
+	
+	public User updateUser(User user)
+	{
+		return repository.save(user);
+	}
+	
+//	public User findUserById(int uid)
+//	{
+//		User dbUser=repository.findById(uid);
+//		if(dbUser != null)
+//		{
+//			return dbUser;
+//		}
+//		else
+//		{
+//			return null;
+//		}
+//	}
+	
+	public Optional<User> findUserById(int uid)
+	{
+		return repository.findById(uid);
+	}
+}

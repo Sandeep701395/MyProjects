@@ -1,0 +1,12 @@
+package org.jsp.springbootstudentcrud_app.controller;
+
+import org.jsp.springbootstudentcrud_app.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+}

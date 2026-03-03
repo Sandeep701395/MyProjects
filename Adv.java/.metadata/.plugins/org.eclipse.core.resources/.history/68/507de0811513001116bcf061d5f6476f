@@ -1,0 +1,65 @@
+package emp_management;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class EditServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        String url = "jdbc:mysql://localhost:3306/employee_management";
+        String user = "root";
+        String password = "root";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, user, password);
+
+            PreparedStatement ps = con.prepareStatement("select * from emps where id=?");
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            PrintWriter pw = resp.getWriter();
+
+            if (rs.next()) {
+
+                pw.println("<html><body>"
+                        + "<h2>Edit Employee</h2>"
+                        + "<form action='update' method='post'>"
+
+                        + "<input type='hidden' name='id' value='" + rs.getInt(1) + "'>"
+
+                        + "Name: <input type='text' name='name' value='" + rs.getString(2) + "'><br>"
+                        + "Salary: <input type='text' name='salary' value='" + rs.getInt(3) + "'><br>"
+                        + "Email: <input type='text' name='email' value='" + rs.getString(4) + "'><br>"
+                        + "Password: <input type='text' name='pwd' value='" + rs.getString(5) + "'><br>"
+                        + "Phone: <input type='text' name='phno' value='" + rs.getLong(6) + "'><br>"
+                        + "Designation: <input type='text' name='desg' value='" + rs.getString(7) + "'><br>"
+                        + "Location: <input type='text' name='loc' value='" + rs.getString(8) + "'><br>"
+
+                        + "<button type='submit'>Update</button>"
+                        + "</form>"
+                        + "</body></html>");
+            }
+
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

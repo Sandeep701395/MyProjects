@@ -1,0 +1,5 @@
+package org.jsp.springbootstudentcrud_app.dto;
+
+public class Student {
+
+}

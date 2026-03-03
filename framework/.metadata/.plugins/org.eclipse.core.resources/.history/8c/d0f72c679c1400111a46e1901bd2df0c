@@ -1,0 +1,17 @@
+package org.jsp.springbootUser1CRUD_app.dao;
+
+import org.jsp.springbootUser1CRUD_app.dto.User1;
+import org.jsp.springbootUser1CRUD_app.repository.User1Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class User1Dao {
+	@Autowired
+	private User1Repository repository;
+	
+	public void saveUser(User1 user)
+	{
+		repository.save(user);
+	}
+}

@@ -1,0 +1,33 @@
+package org.jsp.bikespringboot.controller;
+
+import java.util.List;
+
+import org.jsp.bikespringboot.dto.Bike;
+import org.jsp.bikespringboot.dto.Engine;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BikeController {
+	
+//	@PostMapping("/saveengine")
+//	public void saveEngine( Engine engine)
+//	{
+//		engine.getBid();
+//		engine.getCc();
+//		engine.getType();
+//	}
+	@PostMapping("savebike")
+	public Bike saveBike( Bike bike,List<Engine> engine)
+	{
+		bike.getBrand();
+		bike.getColor();
+		bike.getCost();
+		for (Engine engine2 : engine) {
+			engine2.getBid();
+			engine2.getCc();
+			engine2.getType();
+		}
+		return bike;
+	}
+}

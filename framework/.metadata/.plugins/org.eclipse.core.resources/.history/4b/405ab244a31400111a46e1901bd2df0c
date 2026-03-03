@@ -1,0 +1,30 @@
+package org.jsp.springbootUser1CRUD_app.service;
+
+import java.util.Optional;
+
+import org.jsp.springbootUser1CRUD_app.dao.User1Dao;
+import org.jsp.springbootUser1CRUD_app.dto.User1;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class User1Service {
+	@Autowired
+	private User1Dao dao;
+	
+	public void saveUser(User1 user)
+	{
+		dao.saveUser(user);
+	}
+	
+	public void updateUser(User1 user)
+	{
+		dao.updateUser(user);
+	}
+	
+	public Optional<User1> findUser(User1 user)
+	{
+		Optional<User1> user1=dao.findUser(user);
+		return user1;
+	}
+}

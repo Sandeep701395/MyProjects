@@ -1,0 +1,62 @@
+package org.jsp.studentspringboot.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsp.studentspringboot.dto.Student;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+
+	@PostMapping("/savestudent")
+	public void saveStudent(@RequestBody Student student)
+	{
+		System.out.println(student.getSid());
+		System.out.println(student.getName());
+		System.out.println(student.getAge());
+		System.out.println(student.getAddress());
+		System.out.println(student.getMarks());
+		
+	}
+	@PostMapping("/getstudent")
+	public Student getStudent()
+	{
+		Student student=new Student();
+		student.setSid(10);
+		student.setName("Ranga");
+		student.setAge(25);
+		student.setAddress("Kadapa");
+		student.setMarks(88);
+		return student;
+	}
+	
+	public List<Student> listStudent()
+	{
+		Student student1=new Student();
+		student1.setSid(11);
+		student1.setName("Sai");
+		student1.setAge(24);
+		student1.setAddress("Atp");
+		student1.setMarks(52);
+		
+		Student student2=new Student();
+		student2.setSid(12);
+		student2.setName("Virat");
+		student2.setAge(27);
+		student2.setAddress("Dhone");
+		student2.setMarks(78);
+		
+		ArrayList<Student> students=new ArrayList<Student>();
+		students.add(student1);
+		students.add(student2);
+		for (Student student : students) {
+			System.out.println(student);
+		}
+		
+		return students;
+	}
+}

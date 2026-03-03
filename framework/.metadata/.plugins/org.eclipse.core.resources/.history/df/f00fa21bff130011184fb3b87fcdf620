@@ -1,0 +1,38 @@
+package org.jsp.springbootstudentcrud_app.service;
+
+import java.util.Optional;
+
+import org.jsp.springbootstudentcrud_app.dao.StudentDao;
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentDao dao;
+	
+	public void saveStudent(Student student)
+	{
+		dao.saveStudent(student);
+	}
+	
+	public void updateStudent(Student student)
+	{
+		dao.updateStudent(student);
+	}
+	
+	public Optional<Student> findStudentById(int sid)
+	{
+		Optional<Student> dbStudent=dao.findStudentById(sid);
+		if(dbStudent != null)
+		{
+			return dbStudent;
+		}
+		else
+		{
+			return null;
+		}
+	}
+}

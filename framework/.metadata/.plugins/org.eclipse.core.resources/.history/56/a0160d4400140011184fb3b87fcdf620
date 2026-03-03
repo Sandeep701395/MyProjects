@@ -1,0 +1,45 @@
+package org.jsp.springbootstudentcrud_app.dao;
+
+import java.util.Optional;
+
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.jsp.springbootstudentcrud_app.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+@Repository
+public class StudentDao {
+	@Autowired
+	private StudentRepository repository;
+	
+	public void saveStudent(Student student)
+	{
+		 repository.save(student);
+	}
+	
+//	public void updateStudent(Student student)
+//	{
+//		repository.save(student);
+//	}
+	
+	
+//	public Optional<Student> findStudentById(int sid)
+//	{
+//		Optional<Student> dbStudent=repository.findById(sid);
+//		
+//			return dbStudent;
+//		
+//	}
+	
+	public Student findStudentById(int sid)
+	{
+		Optional<Student> dbStudent=repository.findById(sid);
+		if(dbStudent.isPresent())
+		{
+			return dbStudent.get();
+		}
+		else
+		{
+			return null;
+		}
+	}
+}

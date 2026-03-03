@@ -1,0 +1,22 @@
+package org.jsp.springbootstudentcrud_app.controller;
+
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.jsp.springbootstudentcrud_app.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/student")
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+	
+	@PostMapping("/save")
+	public void saveStudent(Student student)
+	{
+		service.saveStudent(student);
+	}
+}

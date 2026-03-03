@@ -1,0 +1,5 @@
+package org.jsp.springbootUser1CRUD_app.exception;
+
+public class InvalidId {
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+    <bean id="mybattery" class="setter_injection_using_has_a_relationship.Battery"> 
+    <property name="bid" value="10"></property>
+    <property name="capacity" value="6000Mah"></property>
+    <property name="voltage" value="44v"></property>
+    </bean>
+    
+    <bean id="mymobile" class="setter_injection_using_has_a_relationship.Mobile">
+    <property name="brand" value="vivo"></property>
+    <property name="color" value="blue"></property>
+    <property name="cost" value="16000"></property>
+    <property name="battery" ref="mybattery"></property>
+    </bean>
+
+</beans>

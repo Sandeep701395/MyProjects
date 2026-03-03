@@ -1,0 +1,5 @@
+package com.sandeepinfotech.springbootusercrud_app.dto;
+
+public class User {
+
+}

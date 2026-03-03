@@ -1,0 +1,83 @@
+package emp_management;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class EmpDetailsServlet extends HttpServlet
+{
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession hs=req.getSession();
+		int id=(int) hs.getAttribute("id");
+		
+		String url="jdbc:mysql://localhost:3306/employee_management",user="root",password="root";
+		Connection con=null;
+		PreparedStatement pre=null;
+		ResultSet rs=null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(url, user, password);
+			pre=con.prepareStatement("select * from emps");
+			rs=pre.executeQuery();
+			
+			
+				PrintWriter pw=resp.getWriter();
+				pw.println("<html>");
+				pw.println("<body>");
+				pw.println(" <table border='1' cellspacing='0' cellpadding='5'>");
+				pw.println("<tr>");
+				pw.println("<th>Id</th>");
+				pw.println("<th>Name</th>");
+				pw.println("<th>Salary</th>");
+				pw.println("<th>Email</th>");
+				pw.println("<th>Pwd</th>");
+				pw.println("<th>Phno</th>");
+				pw.println("<th>Designation</th>");
+				pw.println("<th>Location</th>");
+				pw.println("</tr>");		
+				while(rs.next())
+				{
+					pw.println("<tr>");
+					pw.println(" <td>"+rs.getInt(1)+"</td>");
+					pw.println(" <td>"+rs.getString(2)+"</td>");
+					pw.println("<td>"+rs.getInt(3)+"</td>");
+					pw.println(" <td>"+rs.getString(4)+"</td>");
+					pw.println(" <td>"+rs.getString(5)+"</td>");
+					pw.println(" <td>"+rs.getLong(6)+"</td>");
+					pw.println(" <td>"+rs.getString(7)+"</td>");
+					pw.println(" <td>"+rs.getString(8)+"</td>");
+					pw.println("</tr>");	
+					
+					pw.println("<form action='edit' method='post'>"
+							+ "<button>Edit</button>"
+							+ "</form>");
+					pw.println("<form action='delete' method='post'>"
+							+ "<button>Delete</button>"
+							+ "</form>");
+				}
+				
+				pw.println("</table>");
+				
+				pw.println("</html>");
+				pw.println("</body>");
+				
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

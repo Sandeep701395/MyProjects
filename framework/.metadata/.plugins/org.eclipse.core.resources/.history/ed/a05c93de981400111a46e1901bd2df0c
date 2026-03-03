@@ -1,0 +1,11 @@
+package org.jsp.springbootUser1CRUD_app.dao;
+
+import org.jsp.springbootUser1CRUD_app.repository.UserRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public @interface UserDao {
+
+	private UserRepository repository;
+	
+}

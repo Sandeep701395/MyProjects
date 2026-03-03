@@ -1,0 +1,18 @@
+package com.sandeepinfotech.springbootusercrud_app.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sandeepinfotech.springbootusercrud_app.dto.User;
+import com.sandeepinfotech.springbootusercrud_app.repository.UserRepository;
+@Repository
+public class UserDao {
+
+	@Autowired
+	private UserRepository repository;
+	
+	public void saveUser(User user)
+	{
+		repository.save(user);
+	}
+}

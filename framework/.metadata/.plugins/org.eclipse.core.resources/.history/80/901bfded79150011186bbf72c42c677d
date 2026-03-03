@@ -1,0 +1,86 @@
+package org.jsp.springbootstudentcrud_app.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.jsp.springbootstudentcrud_app.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/student")
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+	
+	@PostMapping("/save")
+	public void saveStudent(@RequestBody Student student)
+	{
+		service.saveStudent(student);
+	}
+	
+//	@PutMapping("/update")
+//	public void updateStudent(@RequestBody Student student)
+//	{
+//		service.updateStudent(student);
+//	}
+	
+	
+	public Student updateStudentById(@RequestBody Student student)
+	{
+		return service.updateStudentById(student);
+	}
+	
+//	@GetMapping("/find/{sid}")
+//	public Optional<Student> findStudentById(@PathVariable int sid)
+//	{
+//		return	service.findStudentById(sid);
+//		
+//	}
+	
+	@GetMapping("/find/{sid}")
+	public Student findStudentById(@PathVariable int sid)
+	{
+		return 	service.findStudentById(sid);
+		
+	}
+	
+//	@DeleteMapping("/delete")
+//	public void deleteStudent(@RequestBody Student student)
+//	{
+//		service.deleteStudent(student);
+//	}
+	
+	@DeleteMapping("/delete/{sid}")
+	public void deleteStudent1(@PathVariable int sid)
+	{
+		service.deleteStudent1(sid);
+	}
+	
+	@GetMapping("/findall")
+	public List<Student> findAllStudents()
+	{
+		return service.findAllStudents();
+	}
+	
+//	@PostMapping("/login")
+//	public Student login(@RequestBody Student student)
+//	{
+//		return service.login(student);
+//	}
+	
+	@PostMapping("/login")
+	public Student login(@RequestBody Student student)
+	{
+		return service.login(student);
+	}
+}

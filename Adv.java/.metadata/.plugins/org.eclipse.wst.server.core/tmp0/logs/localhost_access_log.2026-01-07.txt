@@ -1,0 +1,14 @@
+127.0.0.1 - - [07/Jan/2026:13:18:24 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:18:25 +0530] "GET /Servlet_LifeCycle/WEB-INF/web.xml HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:18:25 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [07/Jan/2026:13:20:46 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:20:46 +0530] "GET /Servlet_LifeCycle/index.html HTTP/1.1" 200 259
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:20:51 +0530] "POST /Servlet_LifeCycle/life HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jan/2026:13:21:22 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:21:28 +0530] "POST /Servlet_LifeCycle/life HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:22:12 +0530] "POST /Servlet_LifeCycle/life HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:22:33 +0530] "POST /Servlet_LifeCycle/life HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:22:42 +0530] "GET /Servlet_LifeCycle/index.html HTTP/1.1" 304 -
+127.0.0.1 - - [07/Jan/2026:13:25:31 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:25:32 +0530] "GET /Servlet_LifeCycle/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2026:13:25:37 +0530] "POST /Servlet_LifeCycle/life HTTP/1.1" 500 3382

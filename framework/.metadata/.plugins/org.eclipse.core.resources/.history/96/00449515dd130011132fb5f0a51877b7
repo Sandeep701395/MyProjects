@@ -1,0 +1,8 @@
+package org.jsp.springbootstudentcrud_app.repository;
+
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRepository extends JpaRepository<Student, Integer>{
+
+}

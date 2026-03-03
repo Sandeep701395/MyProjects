@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\DELL\Desktop\framework\second_level_caching\src\main\resources\META-INF\persistence.xml"/>
+			<item value="C:\Users\DELL\Desktop\framework\caching\pom.xml"/>
+			<item value="C:\Users\DELL\Desktop\framework\manyToMany_uni"/>
+			<item value="C:\Users\DELL\Desktop\framework\manyToOne_uni"/>
+			<item value="C:\Users\DELL\Desktop\framework\oneToMany_Uni"/>
+			<item value="C:\Users\DELL\Desktop\framework\car_wala"/>
+			<item value="C:\Users\DELL\Desktop\framework\demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="org.jsp"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="spring_hibernate"/>
+			<item value="springIOCcontainer_Annotation"/>
+			<item value="springIOC_container_noXML"/>
+			<item value="springIOCcontroller_annotation"/>
+			<item value="caching2"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="536"/>
+		<item key="x" value="400"/>
+		<item key="y" value="0"/>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\DELL\Downloads\springbootUser1CRUD_app"/>
+			<item value="C:\Users\DELL\Downloads\springbootUserCRUD_app (1)"/>
+			<item value="C:\Users\DELL\Downloads\springbootstudentcrud_app"/>
+			<item value="C:\Users\DELL\Downloads\springbootemployeecrud_app"/>
+			<item value="C:\Users\DELL\Downloads\springbootusercrud_app"/>
+			<item value="C:\Users\DELL\Downloads\bikespringboot"/>
+			<item value="C:\Users\DELL\Downloads\studentspringboot"/>
+			<item value="C:\Users\DELL\Downloads\springbootdemoapp"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

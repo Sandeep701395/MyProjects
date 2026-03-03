@@ -1,0 +1,21 @@
+package org.jsp.springbootemployeecrud_app.controller;
+
+import org.jsp.springbootemployeecrud_app.dto.Employee;
+import org.jsp.springbootemployeecrud_app.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	private EmployeeService service;
+	
+	@PostMapping("/employee/save")
+	public void saveEmployee(@RequestBody Employee employee)
+	{
+		service.saveEmployee(employee);
+	}
+	
+}

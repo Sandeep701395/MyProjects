@@ -1,0 +1,59 @@
+package emp_management;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UpdateServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        int id = Integer.parseInt(req.getParameter("id"));
+        String name = req.getParameter("name");
+        int salary = Integer.parseInt(req.getParameter("salary"));
+        String email = req.getParameter("email");
+        String pwd = req.getParameter("pwd");
+        long phno = Long.parseLong(req.getParameter("phno"));
+        String desg = req.getParameter("desg");
+        String loc = req.getParameter("loc");
+
+        String url = "jdbc:mysql://localhost:3306/employee_management";
+        String user = "root";
+        String password = "root";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, user, password);
+
+            PreparedStatement ps = con.prepareStatement(
+                    "update emps set name=?, salary=?, email=?, pwd=?, phno=?, designation=?, location=? where id=?");
+
+            ps.setString(1, name);
+            ps.setInt(2, salary);
+            ps.setString(3, email);
+            ps.setString(4, pwd);
+            ps.setLong(5, phno);
+            ps.setString(6, desg);
+            ps.setString(7, loc);
+            ps.setInt(8, id);
+
+            ps.executeUpdate();
+
+            con.close();
+
+            // Redirect back to employee list
+            resp.sendRedirect("empdetails");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,15 @@
+127.0.0.1 - - [23/Dec/2025:12:34:02 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:03 +0530] "GET /DemoServlet/form.html HTTP/1.1" 200 126
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:03 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:09 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:10 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:17 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:18 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:20 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:20 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:21 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:34:57 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:35:04 +0530] "GET /DemoServlet/form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:35:17 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:35:22 +0530] "GET /DemoServlet/form.html HTTP/1.1" 200 257
+0:0:0:0:0:0:0:1 - - [23/Dec/2025:12:35:52 +0530] "GET /DemoServlet/form.html HTTP/1.1" 200 261

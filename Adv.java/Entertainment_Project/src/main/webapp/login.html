@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#container{
+height: 150px;
+width:200px;
+border: 2px solid;
+background-color: lightgray;
+border-radius: 10px;
+padding:10px;
+}
+#btn{
+margin-top: 10px;
+margin-left: 50px;
+padding:5px 15px;
+border-radius: 10px;
+color: white;
+background-color: green;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<form action="loging" method="post">
+			<label>Enter Email:</label><input type="text" name="email"><br>
+			<label>Enter Password:</label> <input type="text" name="pwd"><br>
+			<button id="btn">Submit</button>
+	 		 </form>
+	  </div>
+</body>
+</html>

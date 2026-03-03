@@ -1,0 +1,9 @@
+package org.jsp.springbootemployeecrud_app.repository;
+
+import org.jsp.springbootemployeecrud_app.dto.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
+
+	
+}

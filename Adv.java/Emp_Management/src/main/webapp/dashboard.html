@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #form_container{
+            width: 40vw;
+            height: 30vh;
+            border-radius: 3vh;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: inset 0px 0px 10px red, 0px 0px 10px orange;
+        }
+        #buttons_container{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #form_heading{
+            color: navy;
+        }
+        .buttons{
+            font-size: 1.5em;
+            outline: none;
+            border: none;
+            border-radius: 1vw;
+            height: 8vh;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 250ms;
+        }
+        #login_button{
+            width: 10vw;
+            background-color: gold;
+            box-shadow: inset 0px 0px 10px green;
+        }
+        #register_button{
+            width: 12vw;
+            background-color: gold;
+            box-shadow: inset 0px 0px 10px purple;
+        }
+        .buttons:hover{
+            transform: scale(1.1);
+        }
+        .buttons:active{
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <form id="form_container">
+        <h1 id="form_heading">EmployeeManagement</h1>
+        <div id="buttons_container">
+            <a href="login.html" class="buttons" id="login_button">Login</a>
+            <a href="register.html" class="buttons" id="register_button">Register</a>
+    	</div>
+    </form>
+</body>
+</html>

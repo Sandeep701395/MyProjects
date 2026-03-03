@@ -1,0 +1,5 @@
+package org.jsp.springbootdemoapp.controller;
+
+public class DemoController {
+
+}

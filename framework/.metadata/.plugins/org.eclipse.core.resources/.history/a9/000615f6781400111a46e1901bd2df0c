@@ -1,0 +1,13 @@
+package org.jsp.springbootemployeecrud_app.exception;
+
+public class InvalidId extends RuntimeException {
+
+	
+	private String msg="Invalid Student Id";
+	@Override
+	public String getMessage() {
+		
+		return msg;
+	}
+	
+}

@@ -1,0 +1,60 @@
+package org.jsp.bikespringboot.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.catalina.startup.EngineRuleSet;
+import org.jsp.bikespringboot.dto.Bike;
+import org.jsp.bikespringboot.dto.Engine;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BikeController {
+	
+
+	@PostMapping("/savebike")
+	public void saveBike( Bike bike)
+	{
+		System.out.println(bike.getBrand());
+		System.out.println(bike.getColor());
+		System.out.println(bike.getCost());
+		System.out.println(bike.getEngines());
+	}
+	
+	
+	@PostMapping("/getbike")
+	public Bike getBike()
+	{
+		Bike bike=new Bike();
+		bike.setBrand("Maruthi");
+		bike.setColor("white");
+		bike.setCost(400000);
+		
+		List<Engine> engines=new ArrayList<Engine>();
+		Engine engine1=new Engine();
+		engine1.setBid(1);
+		engine1.setCc("125cc");
+		engine1.setType("petrol");
+		
+		Engine engine2=new Engine();
+		engine2.setBid(2);
+		engine2.setCc("130cc");
+		engine2.setType("diesel");
+		
+		Engine engine3=new Engine();
+		engine3.setBid(3);
+		engine3.setCc("140cc");
+		engine3.setType("Electric");
+		
+		engines.add(engine1);
+		engines.add(engine2);
+		engines.add(engine3);
+		
+		bike.setEngines(engines);
+		
+		return bike;
+	}
+	
+}

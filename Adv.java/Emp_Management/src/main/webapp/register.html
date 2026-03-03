@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Product Sans;
+	}
+	body {
+	height: 100vh;
+	width: 100vw;
+	background-color: lightgray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    }
+    #form_container{
+    height: 90%;
+    width: 45%;
+    background-color: skyblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: inset 0px 0px 10px green,inset 0px 0px 20px green;
+    }
+    h1{
+    color: red;
+    }
+    .input_boxes{
+    height: 5vh;
+    width: 40%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    }
+    #register_button
+    {
+    height: 5vh;
+    width: 9vw;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    cursor:pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+	box-shadow: inset 0px 0px 5px greenyellow,inset 0px 0px 10px greenyellow,inset 0px 0px 15px greenyellow;
+	    
+    }
+    a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    }
+</style>
+</head>
+<body>
+	<form action="register" method="post" id="form_container">
+	<h1>Register Employee</h1>
+	<input type="text" name="id" class="input_boxes" placeholder="EmployeeId" >
+	<input type="text" name="name" class="input_boxes" placeholder="Name">
+	<input type="text" name="salary" class="input_boxes" placeholder="Salary">
+	<input type="text" name="email" class="input_boxes" placeholder="Email">
+	<input type="password" name="pwd" class="input_boxes" placeholder="Password">
+	<input type="text" name="phno" class="input_boxes" placeholder="Mobile">
+	<input type="text" name="designation" class="input_boxes" placeholder="Designation">
+	<input type="text" name="location" class="input_boxes" placeholder="Location">
+	<button id="register_button">Register</button>
+	<p>Already Registered?<a href="login.html">LogIn</a></p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="mymobile"
+		class="constructor_injection_has_a_relationship.Mobile">
+		<constructor-arg name="mid" value="10"></constructor-arg>
+		<constructor-arg name="brand" value="vivo"></constructor-arg>
+		<constructor-arg name="color" value="Blue"></constructor-arg>
+
+	</bean>
+
+	<bean id="mylaptop"
+		class="constructor_injection_has_a_relationship.Laptop">
+		<constructor-arg name="lid" value="1"></constructor-arg>
+		<constructor-arg name="brand" value="dell"></constructor-arg>
+		<constructor-arg name="cost" value="25000"></constructor-arg>
+	</bean>
+
+	<bean id="mystudent"
+		class="constructor_injection_has_a_relationship.Student">
+
+		<constructor-arg name="sid" value="100"></constructor-arg>
+		<constructor-arg name="name" value="kiran"></constructor-arg>
+		<constructor-arg name="age" value="19"></constructor-arg>
+		<constructor-arg name="mobile" ref="mymobile"></constructor-arg>
+		<constructor-arg name="laptop" ref="mylaptop"></constructor-arg>
+	</bean>
+
+</beans>

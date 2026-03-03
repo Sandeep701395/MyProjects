@@ -1,0 +1,18 @@
+package org.jsp.springbootstudentcrud_app.exceptionhandler;
+
+import org.jsp.springbootstudentcrud_app.exception.InvalidId;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class MyApplicationExceptionHandler {
+
+	@ExceptionHandler(InvalidId.class)
+	public ResponseEntity<String> invalidId(InvalidId invalidId)
+	{
+		ResponseEntity<String> responseEntity=new ResponseEntity<String>(invalidId.getMessage(), HttpStatus.NOT_FOUND);
+		return responseEntity;
+	}
+}

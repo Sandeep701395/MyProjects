@@ -1,0 +1,5 @@
+package org.jsp.springbootstudentcrud_app.controller;
+
+public class StudentController {
+
+}

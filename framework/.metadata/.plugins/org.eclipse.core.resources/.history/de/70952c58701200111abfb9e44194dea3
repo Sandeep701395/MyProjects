@@ -1,0 +1,33 @@
+package org.jsp.bikespringboot.dto;
+
+public class Engine {
+
+	private int bid;
+	private String cc;
+	private String type;
+	public int getBid() {
+		return bid;
+	}
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+	public String getCc() {
+		return cc;
+	}
+	public void setCc(String cc) {
+		this.cc = cc;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public void engineDetails()
+	{
+		System.out.println(getBid());
+		System.out.println(getCc());
+		System.out.println(getType());
+	}
+}

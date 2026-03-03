@@ -1,0 +1,78 @@
+package com.sandeepinfotech.springbootusercrud_app.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sandeepinfotech.springbootusercrud_app.dao.UserDao;
+import com.sandeepinfotech.springbootusercrud_app.dto.User;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao dao;
+	
+	public void saveUser(User user) {
+		dao.saveUser(user);
+	}
+	
+//	public User updateUser(User user)
+//	{
+//		return dao.updateUser(user);
+//	}
+	
+	public User updateUser(User user)
+	{
+		
+		User dbUser=dao.findUserById(user.getUid());
+		if(dbUser!= null)
+		{
+			return dbUser;
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+	
+	
+	
+//	public User findUserById(int uid)
+//	{
+//		return dao.findUserById(uid);
+//	}
+	
+//	public Optional<User> findUserById(int uid)
+//	{
+//		return dao.findUserById(uid);
+//	}
+	
+	
+	public User findUserById(int uid)
+	{
+		User dbUser=dao.findUserById(uid);
+		if(dbUser == null)
+		{
+			return null;
+		}
+		else
+		{
+			return dbUser;
+		}
+	}
+	
+	public void deleteUser(int uid)
+	{
+		User dbUser=dao.findUserById(uid);
+		if(dbUser != null)
+		{
+			dao.deleteUser(dbUser);
+		}
+		else
+		{
+			
+		}
+	}
+}

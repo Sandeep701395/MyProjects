@@ -1,0 +1,83 @@
+package org.jsp.springbootstudentcrud_app.service;
+
+import java.util.Optional;
+
+import org.jsp.springbootstudentcrud_app.dao.StudentDao;
+import org.jsp.springbootstudentcrud_app.dto.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentDao dao;
+	
+	public void saveStudent(Student student)
+	{
+		dao.saveStudent(student);
+	}
+	
+//	public void updateStudent(Student student)
+//	{
+//		dao.updateStudent(student);
+//	}
+	
+	public Student updateStudentById(Student student)
+	{
+		Student dbStudet=dao.findStudentById(student.getSid());
+		if(dbStudet != null)
+		{
+			return dao.updateStudent(student);
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+//	public Optional<Student> findStudentById(int sid)
+//	{
+//		Optional<Student> dbStudent=dao.findStudentById(sid);
+//		if(dbStudent != null)
+//		{
+//			return dbStudent;
+//		}
+//		else
+//		{
+//			return null;
+//		}
+//	}
+	
+	public Student findStudentById(int sid)
+	{
+		Student dbStudent=dao.findStudentById(sid);
+		if(dbStudent== null)
+		{
+			return null;
+		}
+		else
+		{
+			return dbStudent;
+		}
+	}
+	
+	public void deleteStudent(Student student)
+	{
+		dao.deleteStudent(student);
+	}
+	
+	public void deleteStudentById(Student student)
+	{
+		Student	dbStudent=dao.findStudentById(student.getSid());
+		if(dbStudent != null)
+		{
+				dao.deleteStudent(dbStudent);
+		}
+		else
+		{
+			throw new RuntimeException("Student Id Not available...");
+		}
+		
+	}
+}

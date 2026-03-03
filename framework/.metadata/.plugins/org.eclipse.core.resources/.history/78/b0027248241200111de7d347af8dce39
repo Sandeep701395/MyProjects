@@ -1,0 +1,59 @@
+package org.jsp.springbootdemoapp.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsp.springbootdemoapp.dto.Demo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController {
+
+	@GetMapping("/hi")
+	public String getMsg()
+	{
+		return "Hi I Am GetMessage()";
+	}
+	@PostMapping("/hello")
+	public void postMsg()
+	{
+		System.out.println("Hello I am PostMessage()");
+	}
+	
+	@PostMapping("/savedemo")
+	public void saveDemo(@RequestBody Demo demo)
+	{
+		System.out.println(demo.getDid());
+		System.out.println(demo.getName());
+	}
+	
+	@GetMapping("/getdemo")
+	public Demo getDemo()
+	{
+		Demo demo=new Demo();
+		demo.setDid(1001);
+		demo.setName("Raju");
+		return demo;
+	}
+	
+	@GetMapping("listdemo")
+	public List<Demo> listDemo()
+	{
+		Demo demo=new Demo();
+		demo.setDid(1002);
+		demo.setName("Kiran");
+		
+		Demo demo1=new Demo();
+		demo.setDid(1003);
+		demo.setName("Giri");
+		
+		ArrayList<Demo> demos=new ArrayList<Demo>();
+		demos.add(demo);
+		demos.add(demo1);
+		
+		return demos;
+	}
+}

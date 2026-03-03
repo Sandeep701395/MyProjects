@@ -1,0 +1,21 @@
+package org.jsp.springbootemployeecrud_app.dao;
+
+import org.jsp.springbootemployeecrud_app.dto.Employee;
+import org.jsp.springbootemployeecrud_app.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+@Repository
+public class EmployeeDao {
+	@Autowired
+	private EmployeeRepository repository;
+	
+	public void saveEmployee(Employee employee)
+	{
+		repository.save(employee);
+	}
+	
+	public Employee updateEmployee(Employee employee)
+	{
+		return repository.save(employee);
+	}
+}

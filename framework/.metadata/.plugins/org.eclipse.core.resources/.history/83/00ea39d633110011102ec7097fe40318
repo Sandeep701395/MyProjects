@@ -1,0 +1,20 @@
+package org.jsp.constructor_injection;
+
+import org.jsp.springIOC_container_noXML.MyApplicationConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class CarDriver {
+
+	public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(MyApplicationConfig.class);
+		Car car=(Car) context.getBean("getCar");
+		System.out.println(car);
+		
+		System.out.println("==================");
+		Car car1=(Car) context.getBean("getCar");
+		System.out.println(car1);
+		Car car2=(Car) context.getBean("getCar");
+		System.out.println(car2);
+	}
+}
